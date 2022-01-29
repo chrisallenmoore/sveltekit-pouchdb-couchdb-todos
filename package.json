@@ -16,5 +16,9 @@
     "prettier-plugin-svelte": "^2.4.0",
     "svelte": "^3.44.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "events": "^3.3.0",
+    "pouchdb-browser": "^7.2.2"
+  }
 }
