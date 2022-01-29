@@ -87,8 +87,9 @@
 	/**
 	 * Set the context up for child components
 	 */
-	setContext('toggleCompletedCheckbox', { toggleCompleted });
+	setContext('toggleTodoCompletedAction', { toggleCompleted });
 	setContext('deleteTodoAction', { deleteTodo });
+	setContext('updateTodoAction', { updateTodo });
 
 	/**
 	 * Toggle the checkbox if the todo item is completed or not
@@ -107,6 +108,19 @@
 	 */
 	async function deleteTodo(todo) {
 		await db.remove(todo);
+	}
+
+	/**
+	 * On blue, save updated todo item or delete the todo if it's empty
+	 */
+	function updateTodo(todo) {
+		var trimmedText = todo.item.trim();
+		if (!trimmedText) {
+			db.remove(todo);
+		} else {
+			todo.item = trimmedText;
+			db.put(todo);
+		}
 	}
 </script>
 

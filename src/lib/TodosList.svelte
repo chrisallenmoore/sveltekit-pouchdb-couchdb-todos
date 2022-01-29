@@ -9,8 +9,9 @@
 	/**
 	 * Setup const that uses the context setup by the parent
 	 */
-	const { toggleCompleted } = getContext('toggleCompletedCheckbox');
+	const { toggleCompleted } = getContext('toggleTodoCompletedAction');
 	const { deleteTodo } = getContext('deleteTodoAction');
+	const { updateTodo } = getContext('updateTodoAction');
 </script>
 
 <div class="mt-1 flex rounded-md shadow-sm bg-white p-2">
@@ -35,6 +36,7 @@
 							type="text"
 							class="focus:ring-0 focus:border-slate-500 block rounded-md pl-3 text-lg border-slate-100 transition w-full"
 							bind:value={todo.item}
+							on:blur|self={updateTodo(todo)}
 						/>
 					</div>
 					<div class="ml-3 text-lg items-center">
