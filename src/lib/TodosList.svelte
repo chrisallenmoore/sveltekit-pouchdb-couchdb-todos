@@ -31,6 +31,7 @@
 						/>
 					</div>
 					<div class="ml-3 text-lg max-w-full grow">
+						<!-- Add class: completed if the todo is checked as completed -->
 						{#if todo.completed === true}
 							<input
 								id="todo-item_{todo._id}"
