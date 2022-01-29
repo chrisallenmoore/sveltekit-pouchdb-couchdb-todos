@@ -31,7 +31,7 @@
 		function addEventListeners() {
 			const todoInput = document.getElementById('todo-text');
 			console.log('todo-text is: ' + todoInput.value);
-			todoInput.addEventListener('keypress', newTodoKeyPressHandler, false);
+			todoInput.addEventListener('keypress', addTodoKeyPressHandler, false);
 		}
 		addEventListeners();
 		await getTodos();
@@ -63,7 +63,7 @@
 		item = '';
 	}
 
-	async function newTodoKeyPressHandler(event) {
+	async function addTodoKeyPressHandler(event) {
 		const todoInput = document.getElementById('todo-text');
 		if (event.code === 'Enter') {
 			if (todoInput.value !== '') {
