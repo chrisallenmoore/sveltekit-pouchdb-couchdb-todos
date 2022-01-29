@@ -92,9 +92,12 @@
 	/**
 	 * Toggle the checkbox if the todo item is completed or not
 	 */
-	async function toggleCompleted(todo, event) {
-		let checkedStatus = document.getElementById('todo-checkbox');
-		todo.completed = checkedStatus.checked;
+	async function toggleCompleted(todo) {
+		if (todo.completed === true) {
+			todo.completed = false;
+		} else if (todo.completed === false) {
+			todo.completed = true;
+		}
 		await db.put(todo);
 	}
 </script>
