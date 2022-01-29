@@ -22,7 +22,7 @@
 				<div class="flex items-center">
 					<div class="flex items-center h-6">
 						<input
-							id="todo-checkbox"
+							id="todo-checkbox_{todo._id}"
 							name="todo-checkbox"
 							type="checkbox"
 							class="focus:ring-0 h-6 w-6 text-slate-600 border-slate-300 rounded"
@@ -31,15 +31,27 @@
 						/>
 					</div>
 					<div class="ml-3 text-lg max-w-full grow">
-						<input
-							id="todo-item_{todo._id}"
-							name="todos-item"
-							type="text"
-							class="focus:ring-0 focus:border-slate-500 block rounded-md pl-3 text-lg border-slate-100 transition w-full"
-							bind:value={todo.item}
-							on:blur|self={updateTodo(todo)}
-							on:keydown={updateTodoEnterKey(todo, event)}
-						/>
+						{#if todo.completed === true}
+							<input
+								id="todo-item_{todo._id}"
+								name="todos-item"
+								type="text"
+								class="focus:ring-0 focus:border-slate-500 block rounded-md pl-3 text-lg border-slate-100 transition w-full checked"
+								bind:value={todo.item}
+								on:blur|self={updateTodo(todo)}
+								on:keydown={updateTodoEnterKey(todo, event)}
+							/>
+						{:else}
+							<input
+								id="todo-item_{todo._id}"
+								name="todos-item"
+								type="text"
+								class="focus:ring-0 focus:border-slate-500 block rounded-md pl-3 text-lg border-slate-100 transition w-full"
+								bind:value={todo.item}
+								on:blur|self={updateTodo(todo)}
+								on:keydown={updateTodoEnterKey(todo, event)}
+							/>
+						{/if}
 					</div>
 					<div class="ml-3 text-lg items-center">
 						<button
@@ -72,3 +84,9 @@
 		{/each}
 	</ul>
 </div>
+
+<style>
+	:global(.checked) {
+		text-decoration: line-through;
+	}
+</style>

@@ -96,10 +96,13 @@
 	 * Toggle the checkbox if the todo item is completed or not
 	 */
 	async function toggleCompleted(todo) {
+		let checkboxEditTodo = document.getElementById('todo-item_' + todo._id);
 		if (todo.completed === true) {
 			todo.completed = false;
+			checkboxEditTodo.classList.remove('checked');
 		} else if (todo.completed === false) {
 			todo.completed = true;
+			checkboxEditTodo.classList.add('checked');
 		}
 		await db.put(todo);
 	}
