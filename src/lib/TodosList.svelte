@@ -1,5 +1,12 @@
 <script>
+	// import getContext to use context that was setup by the parent
+	import { getContext } from 'svelte';
 	export let todos = [];
+
+	/**
+	 * Setup const that uses the context setup by the parent
+	 */
+	const { toggleCompleted } = getContext('toggleCompletedCheckbox');
 </script>
 
 <div class="mt-1 flex rounded-md shadow-sm bg-white p-2">
@@ -13,6 +20,8 @@
 							name="todo-checkbox"
 							type="checkbox"
 							class="focus:ring-0 h-6 w-6 text-slate-600 border-slate-300 rounded"
+							bind:checked={todo.completed}
+							on:click={toggleCompleted(todo)}
 						/>
 					</div>
 					<div class="ml-3 text-lg max-w-full grow">

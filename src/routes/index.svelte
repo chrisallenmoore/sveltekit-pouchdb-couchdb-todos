@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { db } from '$lib/db.js';
 	import TodosList from '$lib/TodosList.svelte';
+	import { setContext } from 'svelte';
 
 	onMount(async () => {
 		/**
@@ -81,7 +82,20 @@
 		});
 
 		todos = allTodos.rows.map((row) => row.doc);
-		//console.log(todos);
+	}
+
+	/**
+	 * Set the context up for child components
+	 */
+	setContext('toggleCompletedCheckbox', { toggleCompleted });
+
+	/**
+	 * Toggle the checkbox if the todo item is completed or not
+	 */
+	async function toggleCompleted(todo, event) {
+		let checkedStatus = document.getElementById('todo-checkbox');
+		todo.completed = checkedStatus.checked;
+		await db.put(todo);
 	}
 </script>
 
