@@ -88,6 +88,7 @@
 	 * Set the context up for child components
 	 */
 	setContext('toggleCompletedCheckbox', { toggleCompleted });
+	setContext('deleteTodoAction', { deleteTodo });
 
 	/**
 	 * Toggle the checkbox if the todo item is completed or not
@@ -99,6 +100,13 @@
 			todo.completed = true;
 		}
 		await db.put(todo);
+	}
+
+	/**
+	 * The delete button for a todo deletes the todo
+	 */
+	async function deleteTodo(todo) {
+		await db.remove(todo);
 	}
 </script>
 

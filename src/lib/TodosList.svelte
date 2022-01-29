@@ -10,6 +10,7 @@
 	 * Setup const that uses the context setup by the parent
 	 */
 	const { toggleCompleted } = getContext('toggleCompletedCheckbox');
+	const { deleteTodo } = getContext('deleteTodoAction');
 </script>
 
 <div class="mt-1 flex rounded-md shadow-sm bg-white p-2">
@@ -40,6 +41,7 @@
 						<button
 							type="button"
 							class="-ml-px inline-flex items-center space-x-2 px-2 py-2 border border-slate-500 text-lg font-medium rounded-md text-white bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-1 focus:ring-slate-500 focus:border-slate-500 transition"
+							on:click={deleteTodo(todo)}
 						>
 							<!-- https://icons.getbootstrap.com/icons/x-lg/ -->
 							<svg
