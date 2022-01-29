@@ -38,32 +38,42 @@
 		await getTodos();
 	});
 
-	// Define some stuff
+	/**
+	 * Define some stuff
+	 */
 	let todos = [];
 	let item = '';
 	let completed = false;
-	// Create a new todo document and enter it in the database
+
+	/**
+	 * Create a new todo document and enter it in the database
+	 */
 	async function addTodo(event) {
 		const newTodo = {
 			_id: new Date().toISOString(),
 			item: item,
 			completed: completed
 		};
-		console.log('new todo added:');
-		console.log(newTodo);
 		/*db.put(todo, function callback(err, result) {
 			if (!err) {
 				console.log('Successfully posted a todo!');
 				showTodos();
 			}
 		});*/
-		const sendToDB = await db.post(newTodo);
-		if (sendToDB.ok) {
-			await getTodos();
+		const todoInput = document.getElementById('todo-text');
+		if (todoInput.value !== '') {
+			const sendToDB = await db.post(newTodo);
+			if (sendToDB.ok) {
+				await getTodos();
+			}
+			item = '';
 		}
-		item = '';
 	}
 
+	/**
+	 * When Enter key is pressed while caret is in todo input field,
+	 * submit the todo item if it's not empty
+	 */
 	async function addTodoKeyPressHandler(event) {
 		const todoInput = document.getElementById('todo-text');
 		if (event.code === 'Enter') {
@@ -182,7 +192,7 @@
 			<button
 				type="button"
 				class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-slate-500 text-sm font-medium rounded-r-md text-white bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-1 focus:ring-slate-500 focus:border-slate-500 transition"
-				on:click={addTodo}
+				on:click={addTodo()}
 			>
 				<span>Add</span>
 			</button>
