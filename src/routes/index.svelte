@@ -184,24 +184,35 @@
 				class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-slate-500 text-sm font-medium rounded-r-md text-white bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-1 focus:ring-slate-500 focus:border-slate-500 transition"
 				on:click={addTodo}
 			>
-				<!-- Heroicon name: solid/sort-ascending -->
-				<!--<svg
-					class="h-5 w-5 text-white"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zM3 7a1 1 0 000 2h5a1 1 0 000-2H3zM3 11a1 1 0 100 2h4a1 1 0 100-2H3zM13 16a1 1 0 102 0v-5.586l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 101.414 1.414L13 10.414V16z"
-					/>
-				</svg>-->
 				<span>Add</span>
 			</button>
 		</div>
 		<div class="max-w-2xl mx-auto mt-20">
 			{#if todos.length > 0}
 				<TodosList {todos} />
+			{:else}
+				<div class="mt-1 flex rounded-md bg-white shadow-sm p-2 h-52 items-center justify-center">
+					<div class="text-center text-lg font-bold text-slate-400">
+						<div class="text-lg text-slate-400 p-4">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="60"
+								height="60"
+								fill="currentColor"
+								class="bi bi-card-checklist mx-auto"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"
+								/>
+								<path
+									d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"
+								/>
+							</svg>
+						</div>
+						No todos found. Why not add some and get productive?
+					</div>
+				</div>
 			{/if}
 		</div>
 	</div>
