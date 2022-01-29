@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import { onMount } from 'svelte';
 	import { db } from '$lib/db.js';
@@ -29,4 +33,4 @@
 	<title>Sveltekit PouchDB CouchDB Todos</title>
 </svelte:head>
 
-<h1>Sveltekit PouchDB CouchDB Todos</h1>
+<h1 class="text-3xl font-bold">Sveltekit PouchDB CouchDB Todos</h1>
