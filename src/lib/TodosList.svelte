@@ -12,6 +12,7 @@
 	const { toggleCompleted } = getContext('toggleTodoCompletedAction');
 	const { deleteTodo } = getContext('deleteTodoAction');
 	const { updateTodo } = getContext('updateTodoAction');
+	const { updateTodoEnterKey } = getContext('updateTodoEnterKeyAction');
 </script>
 
 <div class="mt-1 flex rounded-md shadow-sm bg-white p-2">
@@ -31,12 +32,13 @@
 					</div>
 					<div class="ml-3 text-lg max-w-full grow">
 						<input
-							id="todo-item"
+							id="todo-item_{todo._id}"
 							name="todos-item"
 							type="text"
 							class="focus:ring-0 focus:border-slate-500 block rounded-md pl-3 text-lg border-slate-100 transition w-full"
 							bind:value={todo.item}
 							on:blur|self={updateTodo(todo)}
+							on:keydown={updateTodoEnterKey(todo, event)}
 						/>
 					</div>
 					<div class="ml-3 text-lg items-center">

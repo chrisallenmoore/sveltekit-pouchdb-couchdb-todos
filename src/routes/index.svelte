@@ -90,6 +90,7 @@
 	setContext('toggleTodoCompletedAction', { toggleCompleted });
 	setContext('deleteTodoAction', { deleteTodo });
 	setContext('updateTodoAction', { updateTodo });
+	setContext('updateTodoEnterKeyAction', { updateTodoEnterKey });
 
 	/**
 	 * Toggle the checkbox if the todo item is completed or not
@@ -111,7 +112,7 @@
 	}
 
 	/**
-	 * On blue, save updated todo item or delete the todo if it's empty
+	 * On blur, save updated todo item or delete the todo if it's empty
 	 */
 	function updateTodo(todo) {
 		var trimmedText = todo.item.trim();
@@ -120,6 +121,16 @@
 		} else {
 			todo.item = trimmedText;
 			db.put(todo);
+		}
+	}
+
+	/**
+	 * If the enter key is pressed while editing a todo item, blur the todo item's input to trigger save or delete
+	 */
+	async function updateTodoEnterKey(todo, event) {
+		if (event.code == 'Enter') {
+			let inputEditTodo = document.getElementById('todo-item_' + todo._id);
+			inputEditTodo.blur();
 		}
 	}
 </script>
