@@ -2,6 +2,8 @@
 
 A simple todos app using SvelteKit, PouchDB, CouchDB and Tailwind CSS. Data is stored in browser IndexedDB with PouchDB and syncs with a remote CouchDB database.
 
+![Screenshot of SvelteKit, PouchDB, CouchDB Todos](/static/sveltekit-pouchdb-couchdb-todos-screenshot.png)
+
 ## Give it a whirl
 
 Once you've cloned or downloaded the project, install dependencies with `npm install` (or `pnpm install` or `yarn`), then start a development server:
