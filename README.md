@@ -10,6 +10,7 @@ A simple todos app using SvelteKit, PouchDB, CouchDB and Tailwind CSS. Data is s
     - By pressing the Add button
     - By pressing `Enter` key while the caret is in todo item input field
     - Won't add todo item if the todo item input field is empty
+    - Keeps caret focus in add todo input field for quick succession of adding todo items
 - Update todos
     - Update todo item on blur or by pressing Enter key
 - Delete todos
