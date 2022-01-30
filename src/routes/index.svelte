@@ -32,7 +32,6 @@
 
 		function addEventListeners() {
 			const todoInput = document.getElementById('todo-text');
-			console.log('todo-text is: ' + todoInput.value);
 			todoInput.addEventListener('keypress', addTodoKeyPressHandler, false);
 		}
 		addEventListeners();
@@ -55,12 +54,6 @@
 			item: item,
 			completed: completed
 		};
-		/*db.put(todo, function callback(err, result) {
-			if (!err) {
-				console.log('Successfully posted a todo!');
-				showTodos();
-			}
-		});*/
 		const todoInput = document.getElementById('todo-text');
 		if (todoInput.value !== '') {
 			const sendToDB = await db.post(newTodo);
@@ -158,8 +151,8 @@
 		<h1 class="text-4xl font-extrabold text-center">SvelteKit, PouchDB & CouchDB Todos</h1>
 	</div>
 	<div class="max-w-2xl mx-auto mt-20">
-		<label for="email" class="block text-sm font-medium text-gray-700">Add todo</label>
-		<div class="mt-1 flex rounded-md shadow-sm">
+		<label for="todo-text" class="block text-sm font-medium text-gray-700">Add todo</label>
+		<section class="mt-1 flex rounded-md shadow-sm">
 			<div class="relative flex items-stretch flex-grow focus-within:z-10">
 				<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 					<!-- https://icons.getbootstrap.com/icons/box-arrow-in-right/ -->
@@ -197,7 +190,7 @@
 			>
 				<span>Add</span>
 			</button>
-		</div>
+		</section>
 		{#if todos.length > 0}
 			<TodosList {todos} />
 		{:else}

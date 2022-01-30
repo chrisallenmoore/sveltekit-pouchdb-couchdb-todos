@@ -15,7 +15,7 @@
 	const { updateTodoEnterKey } = getContext('updateTodoEnterKeyAction');
 </script>
 
-<div class="max-w-2xl mx-auto mt-20">
+<section class="max-w-2xl mx-auto mt-20">
 	<div class="mt-1 flex rounded-md shadow-sm bg-white p-2">
 		<ul class="w-full">
 			{#each todos as todo}
@@ -86,7 +86,7 @@
 			{/each}
 		</ul>
 	</div>
-</div>
+</section>
 
 <style>
 	:global(.checked) {

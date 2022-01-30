@@ -1,4 +1,4 @@
-<div class="max-w-2xl mx-auto mt-20">
+<section class="max-w-2xl mx-auto mt-20">
 	<div class="mt-1 flex rounded-md bg-white shadow-sm p-2 h-52 items-center justify-center">
 		<div class="text-center text-lg font-bold text-slate-400">
 			<div class="text-lg text-slate-400 p-4">
@@ -21,4 +21,4 @@
 			No todos found. Why not add some and get productive?
 		</div>
 	</div>
-</div>
+</section>
