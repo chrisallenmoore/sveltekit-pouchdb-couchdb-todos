@@ -4,6 +4,20 @@ A simple todos app using SvelteKit, PouchDB, CouchDB and Tailwind CSS. Data is s
 
 ![Screenshot of SvelteKit, PouchDB, CouchDB Todos](/static/sveltekit-pouchdb-couchdb-todos-screenshot.png)
 
+## Features
+
+- Add todos
+    - By pressing the Add button
+    - By pressing `Enter` key while the caret is in todo item input field
+    - Won't add todo item if the todo item input field is empty
+- Update todos
+    - Update todo item on blur or by pressing Enter key
+- Delete todos
+    - By pressing `Delete` button
+    - By having an empty todo item field on blur or by pressing `Enter` key
+- Reactive data
+- Beautiful UI
+
 ## Give it a whirl
 
 Once you've cloned or downloaded the project, install dependencies with `npm install` (or `pnpm install` or `yarn`), then start a development server:
