@@ -23,6 +23,8 @@ A simple todos app using SvelteKit, PouchDB, CouchDB and Tailwind CSS. Data is s
 - [ ] Add user authentication using CouchDB
 - [ ] When added, todos are attached to a user id
 - [ ] Only allow users to view their own todos
+- [ ] Ability to add description to a todo
+- [ ] Ability to add tags to a todo
 
 ## Give it a whirl
 
