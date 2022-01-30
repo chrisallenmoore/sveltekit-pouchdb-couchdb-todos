@@ -154,7 +154,7 @@
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
 	<div class="max-w-3xl mx-auto">
-		<h1 class="text-4xl font-extrabold text-center">Sveltekit, PouchDB & CouchDB Todos</h1>
+		<h1 class="text-4xl font-extrabold text-center">SvelteKit, PouchDB & CouchDB Todos</h1>
 	</div>
 	<div class="max-w-2xl mx-auto mt-20">
 		<label for="email" class="block text-sm font-medium text-gray-700">Add todo</label>
