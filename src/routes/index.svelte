@@ -198,13 +198,11 @@
 				<span>Add</span>
 			</button>
 		</div>
-		<div class="max-w-2xl mx-auto mt-20">
-			{#if todos.length > 0}
-				<TodosList {todos} />
-			{:else}
-				<EmptyTodosList />
-			{/if}
-		</div>
+		{#if todos.length > 0}
+			<TodosList {todos} />
+		{:else}
+			<EmptyTodosList />
+		{/if}
 	</div>
 </div>
 
