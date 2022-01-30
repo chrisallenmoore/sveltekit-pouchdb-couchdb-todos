@@ -19,6 +19,11 @@ A simple todos app using SvelteKit, PouchDB, CouchDB and Tailwind CSS. Data is s
 - Reactive data
 - Beautiful UI
 
+## TODO
+- [ ] Add user authentication using CouchDB
+- [ ] When added, todos are attached to a user id
+- [ ] Only allow users to view their own todos
+
 ## Give it a whirl
 
 Once you've cloned or downloaded the project, install dependencies with `npm install` (or `pnpm install` or `yarn`), then start a development server:
