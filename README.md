@@ -13,8 +13,8 @@ A simple todos app using SvelteKit, PouchDB, CouchDB and Tailwind CSS. Data is s
 - Update todos
     - Update todo item on blur or by pressing Enter key
 - Delete todos
-    - By pressing `Delete` button
-    - By having an empty todo item field on blur or by pressing `Enter` key
+    - By pressing `X` (delete) button
+    - By having an empty todo item input field on blur or by pressing `Enter` key
 - Reactive data
 - Beautiful UI
 
