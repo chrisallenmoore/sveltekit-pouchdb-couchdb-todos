@@ -22,6 +22,9 @@ A simple todos app using SvelteKit, PouchDB, CouchDB and Tailwind CSS. Data is s
 ## TODO
 - [ ] Add ability to hide and show completed todos
 - [ ] Add pending todos count
+- [ ] Move completed todos to the bottom of the TodosList, move them back if the user marks it back to incomplete
+- [ ] Add completed date when todo is marked complete, remove the completed date if the user marks it back to incomplete
+- [ ] Show the completed date somehow
 - [ ] Add user authentication using CouchDB
 - [ ] When added, todos are attached to a user id
 - [ ] Only allow users to view their own todos
