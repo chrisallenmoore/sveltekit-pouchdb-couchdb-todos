@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="description" content="" />
-	<link rel="icon" href="%svelte.assets%/favicon.png" />
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<script>
 		// Shim for PouchDB to access window with SvelteKit since it uses Vite and
@@ -12,11 +12,11 @@
 		window.process = window.process || { env: { NODE_DEBUG: undefined, DEBUG: undefined } };
 		window.global = window;
 	</script>
-	%svelte.head%
+	%sveltekit.head%
 </head>
 
 <body>
-	<div id="svelte">%svelte.body%</div>
+	<div id="svelte">%sveltekit.body%</div>
 </body>
 
 </html>
