@@ -20,6 +20,7 @@ A simple todos app using SvelteKit, PouchDB, CouchDB and Tailwind CSS. Data is s
 - Beautiful UI
 
 ## TODO
+- [X] Update to new SvelteKit routing
 - [ ] Add ability to hide and show completed todos
 - [ ] Add pending todos count
 - [ ] Move completed todos to the bottom of the TodosList, move them back if the user marks it back to incomplete
