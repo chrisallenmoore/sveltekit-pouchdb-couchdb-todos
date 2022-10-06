@@ -1,5 +1,3 @@
-
-
 <script>
 	import { onMount } from 'svelte';
 	import { setContext } from 'svelte';
