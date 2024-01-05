@@ -182,7 +182,7 @@
 			<button
 				type="button"
 				class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-slate-500 text-sm font-medium rounded-r-md text-white bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring-1 focus:ring-slate-500 focus:border-slate-500 transition"
-				on:click={addTodo()}
+				on:click={addTodo}
 			>
 				<span>Add</span>
 			</button>
